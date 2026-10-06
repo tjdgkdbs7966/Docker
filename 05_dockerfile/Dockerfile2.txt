@@ -1,0 +1,13 @@
+# 베이스 이미지
+FROM ubuntu:latest
+
+ENV TEST=HelloDocker
+
+# Shell 형식
+RUN echo "Shell 형식: $TEST"
+
+# Exec 형식
+RUN ["echo", "Exec 형식: $TEST"]
+
+# Exec 형식에서 명시적으로 bash 사용
+RUN ["/bin/bash", "-c", "echo \"Exec 형식 + bash: $TEST\""]
